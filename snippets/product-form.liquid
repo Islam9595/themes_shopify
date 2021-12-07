@@ -110,6 +110,7 @@
     if (window.getSelection) {
       selectedText = window.getSelection().toString();
       var newContent = $('#note_header').html().replace(selectedText, '<span style="font-family:Arial;">'+selectedText+'</span>');
+      console.log("isal,emam")
       console.log(newContent)
       $('#note_header').html(newContent);
     }
