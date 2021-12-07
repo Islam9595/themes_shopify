@@ -97,6 +97,14 @@
 {% endform %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
+  function changeFont(font) {
+    var selectedText = "";
+    if (window.getSelection) {
+      selectedText = window.getSelection().toString();
+      var newContent = $('#note_header').html().replace(selectedText, '<span style="font-family:'+font.value+';">'+selectedText+'</span>');
+      $('#note_header').html(newContent);
+    }
+  }
   $(function() {
     $("input:file").change(function (){
       var fileName = $(this).val();
