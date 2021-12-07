@@ -100,7 +100,10 @@
   $(function() {
     $("input:file").change(function (){
       var fileName = $(this).val();
-      console.log(fileName);
+      console.log(fileName)
+      var fd = new FormData();
+      var files = $('input:file')[0].files;
+        fd.append('file',files[0]);
       $.ajax({
         url: 'upload.php',
         type: 'post',
@@ -108,12 +111,8 @@
         contentType: false,
         processData: false,
         success: function(response){
-          if(response != 0){
-            $("#img").attr("src",response);
-            $(".preview img").show(); // Display image element
-          }else{
-            alert('file not uploaded');
-          }
+          console.log(response)
+
         },
       });
     });
