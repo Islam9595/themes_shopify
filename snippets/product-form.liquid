@@ -113,12 +113,12 @@
       selectedText = window.getSelection().toString();
     console.log(selectedText)
     var newContent = $('#note_header').css(
-            {"font-family": "Corinthia"}
+            {"font-family": font}
     )
   }
   $(function() {
     $("input:file").change(function (){
-      let font="Arial";
+      let font="Corinthia";
       changeFont(font)
       // let font="Arial";
       // changeFont(font)
