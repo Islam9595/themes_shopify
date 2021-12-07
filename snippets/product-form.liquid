@@ -59,6 +59,9 @@
       {%- assign button_text = 'products.product.sold_out' | t -%}
     {%- endif -%}
 
+  <label>color</label>
+  <input type="text" >
+
     <button
       {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
       name="add"
