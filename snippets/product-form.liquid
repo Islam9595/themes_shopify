@@ -41,6 +41,9 @@
     {% comment %}<label for="upload">Upload Font </label>{% endcomment %}
     {% comment %}<input required class="required" id="upload" type="file" name="properties[upload]" class="product-form__input">{% endcomment %}
     <h1>Highlight text and change font </h1>
+    <div contenteditable="true" id="note_header" style="width:200px; height:200px; border: 1px solid #ccc">
+      Some Content
+    </div>
     <select id="select_font" onchange="changeFont(this);">
       <option value="Arial">Arial</option>
       <option value="Sans Serif" selected>Sans Serif</option>
@@ -56,9 +59,6 @@
       <option value="Palatino">Palatino</option>
       <option value="Georgia">Georgia</option>
     </select>
-    <div contenteditable="true" id="note_header" style="width:200px; height:200px; border: 1px solid #ccc">
-      Some Content
-    </div>
   </div>
 
   {% if settings.quantity_enable %}
