@@ -110,7 +110,7 @@
     // if (window.getSelection) {
       selectedText = window.getSelection().toString();
     console.log(selectedText)
-      var newContent = $('#note_header').html().replace(selectedText, '<span style="  font-style: oblique;">'+selectedText+'</span>');
+      var newContent = $('#note_header').style("font-style: oblique");
       console.log("isal,emam")
       console.log(newContent)
       $('#note_header').html(newContent);
