@@ -36,6 +36,10 @@
 
   <label>color</label>
   <input type="text" >
+  <div class="product-form__item product-form__item--upload">
+    <label for="upload">Upload</label>
+    <input required class="required" id="upload" type="file" name="properties[upload]" class="product-form__input">
+  </div>
 
   {% if settings.quantity_enable %}
     <div class="product__quantity product__quantity--{{ settings.variant_type }}">
