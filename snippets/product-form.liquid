@@ -36,20 +36,20 @@
 
 <div>
   <label>choose font :</label>
-  <select value="iskan" id="select_font" onchange="changeFont(this);">
-    <option selected value="Arial">Arial</option>
-    <option value="Sans Serif" selected>Sans Serif</option>
-    <option value="Comic Sans MS">Comic Sans MS</option>
-    <option value="Times New Roman">Times New Roman</option>
-    <option value="Courier New">Courier New</option>
-    <option value="Verdana">Verdana</option>
-    <option value="Trebuchet MS">Trebuchet MS</option>
-    <option value="Arial Black">Arial Black</option>
-    <option value="Impact">Impact</option>
-    <option value="Bookman">Bookman</option>
-    <option value="Garamond">Garamond</option>
-    <option value="Palatino">Palatino</option>
-    <option value="Georgia">Georgia</option>
+  <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
+    {% for variant in product.variants %}
+      {% if variant.available %}
+        <option {% if variant == product.selected_or_first_available_variant %}
+          selected="selected" {% endif %}
+                value="{{ variant.id }}">
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
+        </option>
+      {% else %}
+        <option disabled="disabled">
+          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+        </option>
+      {% endif %}
+    {% endfor %}
   </select>
 <div contenteditable="true" id="note_header" style="width:200px; height:200px; border: 1px solid #ccc">
   Some Content
