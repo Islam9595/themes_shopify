@@ -36,21 +36,6 @@
 
 <div>
   <label>choose font :</label>
-  <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
-    {% for variant in product.variants %}
-      {% if variant.available %}
-        <option {% if variant == product.selected_or_first_available_variant %}
-          selected="selected" {% endif %}
-                value="{{ variant.id }}">
-          {{ variant.title }} - {{ variant.price | money_with_currency }}
-        </option>
-      {% else %}
-        <option disabled="disabled">
-          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-        </option>
-      {% endif %}
-    {% endfor %}
-  </select>
 <div contenteditable="true" id="note_header" style="width:200px; height:200px; border: 1px solid #ccc">
   Some Content
 </div>
@@ -60,8 +45,8 @@
   {% comment %}<input type="text" >{% endcomment %}
 
   <div class="product-form__item product-form__item--upload">
-    {% comment %}<label for="upload">Upload Font </label>{% endcomment %}
-    {% comment %}<input required class="required" id="upload" type="file" name="properties[upload]" class="product-form__input">{% endcomment %}
+    <label for="upload">Upload Font </label>
+    <input required class="required" id="upload" type="file" name="properties[upload]" class="product-form__input">
 
   {% if settings.quantity_enable %}
     <div class="product__quantity product__quantity--{{ settings.variant_type }}">
@@ -129,6 +114,8 @@
   }
   $(function() {
     $("input:file").change(function (){
+      let font="Arial";
+      changeFont(font)
       var fileName = $(this).val();
       console.log(fileName)
       var fd = new FormData();
