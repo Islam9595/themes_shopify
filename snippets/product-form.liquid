@@ -46,9 +46,6 @@
     {%- assign enable_dynamic_buttons = true -%}
   {% endif %}
 
-  <label>color</label>
-  <input type="text" >
-
   {% if enable_dynamic_buttons %}
     <div class="payment-buttons">
   {% endif %}
@@ -88,5 +85,5 @@
     <textarea id="CurrentVariantJson-{{ section_id }}" class="hide" aria-hidden="true">
       {{ current_variant | json }}
     </textarea>
-  {% endif %}z
+  {% endif %}
 {% endform %}
