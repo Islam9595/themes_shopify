@@ -120,7 +120,7 @@
     $("input:file").change(function (){
       let font="Corinthia";
       changeFont(font)
-      $(this).closest('.grid').find('img')
+      console.log($(this).closest('.grid').find('img').attr('data-photoswipe-src'))
       // let font="Arial";
       // changeFont(font)
       // var fileName = $(this).val();
