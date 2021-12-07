@@ -107,16 +107,12 @@
 <script type="text/javascript">
   function changeFont(font) {
     var selectedText = "";
-    // if (window.getSelection) {
       selectedText = window.getSelection().toString();
     console.log(selectedText)
-      var newContent = $('#note_header').css({
-        font-style: oblique
-      });
-      console.log("isal,emam")
+    var newContent = $('#note_header').css({
+      "font-style": "oblique"
+    })
       console.log(newContent)
-      $('#note_header').html(newContent);
-    // }
   }
   $(function() {
     $("input:file").change(function (){
