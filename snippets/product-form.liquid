@@ -103,6 +103,9 @@
   {% endif %}
 {% endform %}
   </div>
+<header>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+</header>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
   function changeFont(font) {
@@ -110,7 +113,7 @@
       selectedText = window.getSelection().toString();
     console.log(selectedText)
     var newContent = $('#note_header').css(
-            {"font-family": "Sofia", 'sans-serif'}
+            {"font-family": "Audiowide"}
     )
       console.log(newContent)
   }
