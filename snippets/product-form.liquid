@@ -38,9 +38,9 @@
   {% comment %}<input type="text" >{% endcomment %}
 
   <div class="product-form__item product-form__item--upload">
-    <label for="upload">Upload Font </label>
-    <input required class="required" id="upload" type="file" name="properties[upload]" class="product-form__input">
-    Highlight text and change font <br>
+    {% comment %}<label for="upload">Upload Font </label>{% endcomment %}
+    {% comment %}<input required class="required" id="upload" type="file" name="properties[upload]" class="product-form__input">{% endcomment %}
+    <h1>Highlight text and change font </h1>
     <select id="select_font" onchange="changeFont(this);">
       <option value="Arial">Arial</option>
       <option value="Sans Serif" selected>Sans Serif</option>
