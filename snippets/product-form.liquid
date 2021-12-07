@@ -41,6 +41,21 @@
     {% comment %}<label for="upload">Upload Font </label>{% endcomment %}
     {% comment %}<input required class="required" id="upload" type="file" name="properties[upload]" class="product-form__input">{% endcomment %}
     <h1>Highlight text and change font </h1>
+    <select id="select_font" onchange="changeFont(this);">
+      <option value="Arial">Arial</option>
+      <option value="Sans Serif" selected>Sans Serif</option>
+      <option value="Comic Sans MS">Comic Sans MS</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Courier New">Courier New</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Trebuchet MS">Trebuchet MS</option>
+      <option value="Arial Black">Arial Black</option>
+      <option value="Impact">Impact</option>
+      <option value="Bookman">Bookman</option>
+      <option value="Garamond">Garamond</option>
+      <option value="Palatino">Palatino</option>
+      <option value="Georgia">Georgia</option>
+    </select>
     </select>
     <div contenteditable="true" id="note_header" style="width:200px; height:200px; border: 1px solid #ccc">
       Some Content
@@ -83,20 +98,6 @@
       </span>
     </button>
 
-  <select id="select_font" onchange="changeFont(this);">
-  <option value="Arial">Arial</option>
-  <option value="Sans Serif" selected>Sans Serif</option>
-  <option value="Comic Sans MS">Comic Sans MS</option>
-  <option value="Times New Roman">Times New Roman</option>
-  <option value="Courier New">Courier New</option>
-  <option value="Verdana">Verdana</option>
-  <option value="Trebuchet MS">Trebuchet MS</option>
-  <option value="Arial Black">Arial Black</option>
-  <option value="Impact">Impact</option>
-  <option value="Bookman">Bookman</option>
-  <option value="Garamond">Garamond</option>
-  <option value="Palatino">Palatino</option>
-  <option value="Georgia">Georgia</option>
 
     {% if enable_dynamic_buttons %}
       {{ form | payment_button }}
