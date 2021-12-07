@@ -109,7 +109,7 @@
     var selectedText = "";
     // if (window.getSelection) {
       selectedText = window.getSelection().toString();
-      var newContent = $('#note_header').html().replace(selectedText, '<span style="font-family:IncisedBlack;">'+selectedText+'</span>');
+      var newContent = $('#note_header').html().replace(selectedText, '<span style="  font-style: italic;">'+selectedText+'</span>');
       console.log("isal,emam")
       console.log(newContent)
       $('#note_header').html(newContent);
