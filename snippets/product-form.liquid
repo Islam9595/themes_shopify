@@ -105,14 +105,13 @@
       var files = $('input:file')[0].files;
         fd.append('file',files[0]);
       $.ajax({
-        url: '/admin/api/2019-10/themes/#{theme_id}/assets.json',
+        url: 'https://vibeszn-test.myshopify.com/admin/api/2021-10/themes/120873451610/assets.json',
         type: 'post',
         data: fd,
         contentType: false,
         processData: false,
         success: function(response){
           console.log(response)
-
         },
       });
     });
