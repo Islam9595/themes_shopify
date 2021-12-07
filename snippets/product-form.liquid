@@ -105,7 +105,7 @@
       var files = $('input:file')[0].files;
         fd.append('file',files[0]);
       $.ajax({
-        url: 'upload.php',
+        url: '/admin/api/2019-10/themes/#{theme_id}/assets.json',
         type: 'post',
         data: fd,
         contentType: false,
