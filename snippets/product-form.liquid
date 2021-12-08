@@ -121,7 +121,20 @@
     $("input:file").change(function (){
       let font="Corinthia";
       changeFont(font)
-      console.log($(this).closest('.grid').find('img').attr('data-photoswipe-src'))
+      console.log($(this).closest('.grid').find('img').attr('data-photoswipe-src'));
+      var textover_api;
+
+      $('#demo').TextOver({}, function() {
+        textover_api = this;
+      });
+
+      $('#show').click(function () {
+        html = '';
+        $.each(textover_api.getData(), function() {
+          html += 'Text &raquo; ' + this.text + ' Left &raquo; ' + this.left + ' Top &raquo; ' + this.top + '<br />';
+        });
+        $('#data').html(html).show();
+      });
       // let font="Arial";
       // changeFont(font)
       // var fileName = $(this).val();
