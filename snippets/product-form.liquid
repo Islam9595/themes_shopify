@@ -41,20 +41,8 @@
     <label for="upload">Upload Font </label>
     <input required class="required" id="upload" type="file" name="properties[upload]" class="product-form__input">
     <label for="select_color">Select Color </label>
-    <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
-      {% for variant in product.variants %}
-        {% if variant.available %}
-          <option {% if variant == product.selected_or_first_available_variant %}
-            selected="selected" {% endif %}
-                  value="{{ variant.id }}">
-            {{ variant.title }} - {{ variant.price | money_with_currency }}
-          </option>
-        {% else %}
-          <option disabled="disabled">
-            {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-          </option>
-        {% endif %}
-      {% endfor %}
+    <select name="select_color" >
+      <option>1</option>
     </select>
     <label>Result :</label>
     <textarea disabled contenteditable="true" id="note_header" style="width:200px; height:50px; border: 1px solid #ccc">
