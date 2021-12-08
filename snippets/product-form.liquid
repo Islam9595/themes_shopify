@@ -126,10 +126,17 @@
     $("input:file").change(function (){
       let font="Corinthia";
       changeFont(font)
-      var image  =$(this).closest('.grid').find('img');
-      var textover_api;
-      image.TextOver({}, function() {
+      // How easy is this??
+      $('#target').TextOver({}, function() {
         textover_api = this;
+      });
+
+      $('#show').click(function () {
+        html = '';
+        $.each(textover_api.getData(), function() {
+          html += 'Text &raquo; ' + this.text + ' Left &raquo; ' + this.left + ' Top &raquo; ' + this.top + '<br />';
+        });
+        $('#data').html(html).show();
       });
       // html = '';
       // $.each(textover_api.getData(), function() {
