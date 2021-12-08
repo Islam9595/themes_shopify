@@ -64,7 +64,7 @@
 
         {%- assign img_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
         {%- assign zoom_img_url = media.preview_image | img_url: product_zoom_size -%}
-        <div class="container">
+        <div class="custom_container">
         <img class="{% if settings.product_zoom_enable %}photoswipe__image{% endif %} lazyload "
           data-photoswipe-src="{{ zoom_img_url }}"
           data-photoswipe-width="{{ media_width }}"
@@ -76,6 +76,7 @@
           data-sizes="auto"
           alt="{{ media.alt | escape }}">
         <div class="custom_centered">Centered</div>
+        </div>
 
         {%- if settings.product_zoom_enable and media.media_type == 'image' -%}
           <button type="button" class="btn btn--no-animate btn--body btn--circle js-photoswipe__zoom product__photo-zoom">
