@@ -39,7 +39,7 @@
 <div contenteditable="true" id="note_header" style="width:200px; height:200px; border: 1px solid #ccc">
  IslamMOHAMEDEMAM
 </div>
-  <div id="data">The data goes here</div>
+  {% comment %}<div id="data">The data goes here</div>{% endcomment %}
 
 </div>
 
@@ -132,7 +132,7 @@
       $.each(textover_api.getData(), function() {
         html += 'Text &raquo; ' + this.text + ' Left &raquo; ' + this.left + ' Top &raquo; ' + this.top + '<br />';
       });
-      $('#data').html(html).show();
+      // $('#data').html(html).show();
       // let font="Arial";
       // changeFont(font)
       // var fileName = $(this).val();
