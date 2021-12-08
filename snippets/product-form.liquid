@@ -121,10 +121,9 @@
     $("input:file").change(function (){
       let font="Corinthia";
       changeFont(font)
-      console.log($(this).closest('.grid').find('img').attr('data-photoswipe-src'));
+      var image  =$(this).closest('.grid').find('img').first();
       var textover_api;
-
-      $('#demo').TextOver({}, function() {
+      image.TextOver({}, function() {
         textover_api = this;
       });
 
