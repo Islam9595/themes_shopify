@@ -48,6 +48,7 @@
         {%- assign media_aspect_ratio = media.preview_image.aspect_ratio -%}
       {%- endif -%}
       <div
+      <div
         class="custom_container image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: media_aspect_ratio }}%;"
         data-product-media-type-model
         data-media-id="{{ section_id }}-{{ media.id }}">
