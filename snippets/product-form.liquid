@@ -1,83 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>jQuery Text Over Demo</title>
-  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="../assets/jquery.textover.min.js"></script>
-  <script type="text/javascript">
-    jQuery(function($){
+{% capture form_id %}AddToCartForm-{{ section_id }}{% endcapture %}
+{% form 'product', product, id: form_id, class: 'product-single__form' %}
+  {% unless product.has_only_default_variant %}
+    {% for option in product.options_with_values %}
+      {% if settings.variant_type == 'button' %}
+        {% render 'variant-button',
+          section_id: section_id,
+          option: option,
+          forloop: forloop
+        %}
+      {% else %}
+        {% render 'variant-dropdown',
+          section_id: section_id,
+          option: option,
+          forloop: forloop
+        %}
+      {% endif %}
+    {% endfor %}
+  {% endunless %}
 
+  <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
+    {% for variant in product.variants %}
+      {% if variant.available %}
+        <option {% if variant == product.selected_or_first_available_variant %}
+          selected="selected" {% endif %}
+          value="{{ variant.id }}">
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
+        </option>
+      {% else %}
+        <option disabled="disabled">
+          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+        </option>
+      {% endif %}
+    {% endfor %}
+  </select>
+
+<div>
+  <label>choose font :</label>
+<div contenteditable="true" id="note_header" style="width:200px; height:200px; border: 1px solid #ccc">
+ IslamMOHAMEDEMAM
+</div>
+  {% comment %}<div id="data">The data goes here</div>{% endcomment %}
+
+</div>
+
+  {% comment %}<label>color</label>{% endcomment %}
+  {% comment %}<input type="text" >{% endcomment %}
+
+  <div class="product-form__item product-form__item--upload">
+    <label for="upload">Upload Font </label>
+    <input required class="required" id="upload" type="file" name="properties[upload]" class="product-form__input">
+
+  {% if settings.quantity_enable %}
+    <div class="product__quantity product__quantity--{{ settings.variant_type }}">
+      <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>
+      {% render 'quantity-input', id: section_id, qty: 1, min: 1 %}
+    </div>
+  {% endif %}
+
+  {%- assign enable_dynamic_buttons = false -%}
+  {% if settings.enable_payment_button and template != 'product.preorder' %}
+    {%- assign enable_dynamic_buttons = true -%}
+  {% endif %}
+
+  {% if enable_dynamic_buttons %}
+    <div class="payment-buttons">
+  {% endif %}
+
+    {%- assign button_text = 'products.product.add_to_cart' | t -%}
+    {%- if current_variant.available -%}
+      {%- if template == 'product.preorder' -%}
+        {%- assign button_text = 'products.product.preorder' | t -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- assign button_text = 'products.product.sold_out' | t -%}
+    {%- endif -%}
+
+    <button
+      {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
+      name="add"
+      id="AddToCart-{{ section_id }}"
+      class="{% if enable_dynamic_buttons %}btn--tertiary{% else %}btn{% endif %} btn--full btn--no-animate add-to-cart"
+      {% unless current_variant.available %} disabled="disabled"{% endunless %}>
+      <span id="AddToCartText-{{ section_id }}" data-default-text="{{ button_text }}">
+        {{ button_text }}
+      </span>
+    </button>
+
+
+    {% if enable_dynamic_buttons %}
+      {{ form | payment_button }}
+    {% endif %}
+
+  {% if enable_dynamic_buttons %}
+    </div>
+  {% endif %}
+
+  <textarea id="VariantsJson-{{ section_id }}" class="hide" aria-hidden="true">
+    {{ product.variants | json }}
+  </textarea>
+  {% if product.options.size > 1 %}
+    <textarea id="CurrentVariantJson-{{ section_id }}" class="hide" aria-hidden="true">
+      {{ current_variant | json }}
+    </textarea>
+  {% endif %}
+{% endform %}
+  </div>
+<header>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Corinthia">
+</header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../assets/jquery.textover.min.js"></script>
+<script type="text/javascript">
+  function changeFont(font) {
+    var selectedText = "";
+      selectedText = window.getSelection().toString();
+    console.log(selectedText)
+    var newContent = $('#note_header').css(
+            {"font-family": font}
+    )
+  }
+  $(function() {
+    $("input:file").change(function (){
+      let font="Corinthia";
+      changeFont(font)
+      var image  =$(this).closest('.grid').find('img').first();
       var textover_api;
-
-      // How easy is this??
-      $('#target').TextOver({}, function() {
+      image.TextOver({}, function() {
         textover_api = this;
       });
-
-      $('#show').click(function () {
-        html = '';
-        $.each(textover_api.getData(), function() {
-          html += 'Text &raquo; ' + this.text + ' Left &raquo; ' + this.left + ' Top &raquo; ' + this.top + '<br />';
-        });
-        $('#data').html(html).show();
+      html = '';
+      $.each(textover_api.getData(), function() {
+        html += 'Text &raquo; ' + this.text + ' Left &raquo; ' + this.left + ' Top &raquo; ' + this.top + '<br />';
       });
-
+      // $('#data').html(html).show();
+      // let font="Arial";
+      // changeFont(font)
+      // var fileName = $(this).val();
+      // console.log(fileName)
+      // var fd = new FormData();
+      // var files = $('input:file')[0].files;
+      // console.log(files)
+      // fd.append('file',files[0]);
+      // console.log(fd)
+      // $.ajax({
+      //   url: 'https://vibeszn-test.myshopify.com/admin/api/2021-10/themes/120873451610/assets.json',
+      //   type: 'PUT',
+      //   data: fd,
+      //   success: function(response){
+      //     console.log("islamemam")
+      //     console.log(response)
+      //   },
+      // });
     });
-
-  </script>
-  <link rel="stylesheet" href="media/demos.css" type="text/css" />
-</head>
-<body>
-<div id="jquery-script-menu">
-  <div class="jquery-script-center">
-    <ul>
-      <li><a href="http://www.jqueryscript.net/other/jQuery-Plugin-To-Add-Text-Notes-Over-The-Images-textover.html">Download This Plugin</a></li>
-      <li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
-    </ul>
-    <div class="jquery-script-ads"><script type="text/javascript"><!--
-        google_ad_client = "ca-pub-2783044520727903";
-        /* jQuery_demo */
-        google_ad_slot = "2780937993";
-        google_ad_width = 728;
-        google_ad_height = 90;
-        //-->
-      </script>
-      <script type="text/javascript"
-              src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-      </script></div>
-    <div class="jquery-script-clear"></div>
-  </div>
-</div>
-<div class="container" style="margin-top:150px;">
-  <div class="row">
-    <div class="span11">
-      <div class="demo-box">
-        <div class="page-header">
-          <h1>jQuery Text Over Demo</h1>
-        </div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/800px-Eq_it-na_pizza-margherita_sep2005_sml.jpg" id="target" alt="[Text Over Example]" />
-        <div id="data" class="well"></div>
-        <button id="show">Show Data</button>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-  </div>
-</div>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
+  });
 </script>
-</body>
-</html>
