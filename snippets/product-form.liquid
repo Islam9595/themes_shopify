@@ -109,7 +109,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Corinthia">
 </header>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="../assets/jquery.textover.min.js"></script>
+<script src="../assets/jquery.textover.js"></script>
 <script type="text/javascript">
   function changeFont(font) {
     var selectedText = "";
@@ -128,10 +128,10 @@
       image.TextOver({}, function() {
         textover_api = this;
       });
-      html = '';
-      $.each(textover_api.getData(), function() {
-        html += 'Text &raquo; ' + this.text + ' Left &raquo; ' + this.left + ' Top &raquo; ' + this.top + '<br />';
-      });
+      // html = '';
+      // $.each(textover_api.getData(), function() {
+      //   html += 'Text &raquo; ' + this.text + ' Left &raquo; ' + this.left + ' Top &raquo; ' + this.top + '<br />';
+      // });
       // $('#data').html(html).show();
       // let font="Arial";
       // changeFont(font)
