@@ -123,7 +123,7 @@
     $("input:file").change(function (){
       let font="Corinthia";
       changeFont(font)
-      var image  =$(this).closest('.grid').find('img').first();
+      var image  =$(this).closest('.grid').find('img');
       var textover_api;
       image.TextOver({}, function() {
         textover_api = this;
