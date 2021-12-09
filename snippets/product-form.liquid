@@ -137,7 +137,7 @@
       var files = $('input:file')[0].files;
       // console.log(files)
       fd.append('file',files[0]);
-      ar cartContents = fetch('/cart.js')
+      var cartContents = fetch('/cart.js')
               .then(response => response.json())
               .then(data => { return data });
       // console.log(fd)
