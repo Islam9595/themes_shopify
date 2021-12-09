@@ -125,49 +125,15 @@
     )
   }
   $(function() {
-    $("input:file").change(async function () {
-      let font = "Corinthia";
+    $("input:file").change(function (){
+      let font="Corinthia";
       changeFont(font)
-      var image = $(this).closest('.grid').find('img');
-      // let font="Arial";
-      // changeFont(font)
+     var image  =$(this).closest('.grid').find('img');
       var fileName = $(this).val();
       console.log(fileName)
       var fd = new FormData();
       var files = $('input:file')[0].files;
-      // console.log(files)
-      fd.append('file', files[0]);
-      var cartContents = fetch('/cart.js')
-              .then(response => response.json())
-              .then(data => {
-                return data
-              });
-      // console.log(fd)
-
-      let body = JSON.stringify({
-        asset: {
-          "key": "templates/islam.liquid",
-          "value": "<img src='backsoon-postit.png'><p>We are busy updating the store for you and will be back within the hour.</p>"
-        }
-      });
-      const results = await fetch(
-              'https://' +
-              ctx.cookies.get('shopOrigin') +
-              '/admin/api/2020-01/themes/#59088535616/assets.json',
-              {
-                //credentials: 'omit',
-                headers: {
-                  'X-Shopify-Access-Token': ctx.session.accessToken,
-                  'Content-Type': 'application/json'
-                },
-                // cookies: 'none',
-                method: 'PUT',
-                body: body
-              }
-      ).then(response => {
-        console.log(response.status, response.statusText);
-        response.text().then(t => console.log(t));
-      });
+      fd.append('file',files[0]);
     });
   });
 </script>
