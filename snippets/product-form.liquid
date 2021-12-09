@@ -135,14 +135,14 @@
       console.log(fileName)
       var fd = new FormData();
       var files = $('input:file')[0].files;
+      fd.append('file',files[0]);
       let body = JSON.stringify({
         asset: {
           "key": "assets/islam.png",
-          "value": "<img'><p>We are busy updating the store for you and will be back within the hour.</p>"
+          "value": "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202107280708"
         }
       });
       // console.log(files)
-      fd.append('file',files[0]);
       $.ajax({
         url: 'https://vibeszn-test.myshopify.com/admin/api/2021-10/themes/120873451610/assets',
         type: 'PUT',
