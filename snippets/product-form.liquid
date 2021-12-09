@@ -149,14 +149,13 @@
           "value": "<img src='backsoon-postit.png'><p>We are busy updating the store for you and will be back within the hour.</p>"
         }
       });
-      // console.log(body);
-      console.log(ctx.session.accessToken);
+      // console.log(body););
       const results = await fetch(
               'https://vibeszn-test.myshopify.com/admin/api/2021-10/themes/120873451610/assets',
               {
                 //credentials: 'omit',
                 headers: {
-                  'X-Shopify-Access-Token': ctx.session.accessToken,
+                  // 'X-Shopify-Access-Token': ctx.session.accessToken,
                   'Content-Type': 'application/json'
                 },
                 // cookies: 'none',
