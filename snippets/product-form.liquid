@@ -137,11 +137,6 @@
       var files = $('input:file')[0].files;
       // console.log(files)
       fd.append('file', files[0]);
-      var cartContents = fetch('/cart.js')
-              .then(response => response.json())
-              .then(data => {
-                return data
-              });
       // console.log(fd)
       let body = JSON.stringify({
         asset: {
