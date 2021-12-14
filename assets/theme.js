@@ -259489,16 +259489,14 @@ else
             {
                 var opt_data = opts[j];
                 var opt_name
-                console.log("islam");
-                console.log(opt_data.name);
-                // try {
-                     opt_name=(JSON.parse("'"+opt_data.name+"'")).font_family;
-                    console.log("omar");
-                    console.log(JSON.parse("'"+opt_data.name+"'"))
-                // } catch (e) {
-                //     opt_name = opt_data.name;
-                //     console.log("alaa");
-                // }
+                try {
+                    opt_name=(JSON.parse("'"+opt_data.name+"'")).font_family;
+                    // console.log("omar");
+                    // console.log(JSON.parse("'"+opt_data.name+"'"))
+                } catch (e) {
+                    opt_name = opt_data.name;
+                    // console.log("alaa");
+                }
                 // console.log((JSON.parse("'"+opt_data.name+"'")));
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
 
