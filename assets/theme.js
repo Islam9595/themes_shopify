@@ -257450,7 +257450,7 @@ else
 
                     var $opt = $input.find('option:selected');
                     val = $opt.text();
-                    var dn = "islam";
+                    var dn = $opt.attr('data-name');
                     if (dn)
                     {
                         val = dn;
@@ -258189,7 +258189,7 @@ else
                             attr.validation.name = attr.name;
                             attr.validation.list = true;
 
-                            $input = addInputList(attr, id);
+                          //  $input = addInputList(attr, id);
                             //console.log('list added', attr.ext.path);
 
                             $validation_message = $("<div/>");
