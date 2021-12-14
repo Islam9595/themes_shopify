@@ -259488,6 +259488,8 @@ else
             for(var j=0; j < opts.length; j++)
             {
                 var opt_data = opts[j];
+                const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+                const opt_data = JSON.parse(text);
                 var      opt_name = opt_data.name;
                 // try {
                 //     opt_name=(JSON.parse("'"+opt_data.name+"'")).font_family;
