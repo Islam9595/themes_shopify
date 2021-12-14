@@ -259488,6 +259488,9 @@ else
             for(var j=0; j < opts.length; j++)
             {
                 var opt_data = opts[j];
+                console.log("emamemam")
+                console.log(opt_data)
+
 
                 var opt_name = opt_data.name;
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
@@ -259514,9 +259517,9 @@ else
                     continue;
                 }
 
-                // var $opt = $('<option/>');
-                // $opt.text(opt_name);
-                // $opt.attr('data-name', opt_data.name_initial);
+                var $opt = $('<option/>');
+                $opt.text(opt_name);
+                $opt.attr('data-name', opt_data.name_initial);
 
                 var opt_id = opt_data.id + '*' + opt_data.name;
 
