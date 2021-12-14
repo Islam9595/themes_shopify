@@ -259490,12 +259490,12 @@ else
                 var opt_data = opts[j];
                 console.log("emamemam")
                 console.log(opt_data)
-
+                var opt_name
                 if (!isJson(opt_name)){
-                    var opt_name = opt_data.name;
+                     opt_name = opt_data.name;
                 }
                 else{
-                    var opt_name =  JSON.parse(opt_name).name;
+                     opt_name =  JSON.parse(opt_data.name).name;
                 }
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
 
