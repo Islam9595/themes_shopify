@@ -257685,6 +257685,9 @@ else
             switch(type)
             {
                 case 'list':
+                    val = $input.find('option:selected').val();
+                    break;
+
                 case 'Upload Font':
                     val = $input.find('option:selected').val();
                     break;
