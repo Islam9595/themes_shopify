@@ -257116,6 +257116,7 @@ else
             switch (attr.type)
             {
                 case 'list':
+                case 'font':
 
                     if ($input.attr('data-hide'))
                     {
@@ -257359,6 +257360,7 @@ else
             switch(type)
             {
                 case 'list':
+                case 'font':
                     val = $input.find('option:selected').val();
                     break;
 
@@ -257837,6 +257839,7 @@ else
                     switch (attr.type)
                     {
                         case 'list':
+                        case 'font':
 
                             attr.validation = {};
                             attr.validation.required = true;
