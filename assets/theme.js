@@ -259489,7 +259489,7 @@ else
             {
                 var opt_data = opts[j];
                 const text = '{"font_family":"Aguafina Script","font_style":"Regular","file_name":"sTlzKbzhCkNi0JOg.ttf"}';
-                var      opt_name = opt_data.name;
+                var      opt_name = opt_data.font_family;
                 const obj = JSON.parse(text);
                 opt_name = obj.name;
                 // try {
