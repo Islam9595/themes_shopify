@@ -259489,17 +259489,18 @@ else
             {
                 var opt_data = opts[j];
                 var opt_name;
-                try {
-                    var  font_data =`"${opt_data.name}"`;
-                    console.log("font_data",font_data)
-                    font_data=  font_data.replace(" - Back in stock soon", " ")
-                    opt_name=(JSON.parse(font_data)).font_family;
-                    console.log("abd")
-                    console.log(opt_name)
-                    console.log("rahaman")
-                } catch (e) {
-                    opt_name = opt_data.name;
-                }
+                // try {
+                //     var  font_data =`"${opt_data.name}"`;
+                //     console.log("font_data",font_data)
+                //     font_data=  font_data.replace(" - Back in stock soon", " ")
+                //     opt_name=(JSON.parse(font_data)).font_family;
+                //     console.log("abd")
+                //     console.log(opt_name)
+                //     console.log("rahaman")
+                // } catch (e) {
+                //     opt_name = opt_data.name;
+                // }
+                opt_name = opt_data.name;
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
 
                 if ($opt_existing.length > 0)
