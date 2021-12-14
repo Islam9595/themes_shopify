@@ -259491,6 +259491,7 @@ else
                 var opt_name;
                 try {
                     var  font_data =`"${opt_data.name}"`;
+                    console.log("font_data",font_data)
                     opt_name=(JSON.parse(font_data)).font_family;
                     console.log("abd")
                     console.log(opt_name)
