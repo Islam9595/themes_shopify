@@ -259493,6 +259493,7 @@ else
                 console.log(opt_data.name);
                 try {
                     opt_name=(JSON.parse("'"+opt_data.name+"'")).font_family;
+                    console.log(JSON.parse("'"+opt_data.name+"'"))
                     console.log("omar");
                 } catch (e) {
                     opt_name = opt_data.name;
