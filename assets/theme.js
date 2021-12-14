@@ -259495,6 +259495,7 @@ else
                 //     opt_name = opt_data.name;
                 // }
                 console.log("islam");
+                console.log(opt_data.name);
                 console.log((JSON.parse(opt_data.name)));
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
 
