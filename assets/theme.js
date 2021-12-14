@@ -259493,7 +259493,8 @@ else
 
 
                 var opt_name = opt_data.name;
-                if ()
+                if (){
+                }
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
 
                 if ($opt_existing.length > 0)
