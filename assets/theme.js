@@ -257441,22 +257441,22 @@ else
 
                     break;
 
-                case 'Upload Font':
-
-                    if ($input.attr('data-hide'))
-                    {
-                        return '';
-                    }
-
-                    var $opt = $input.find('option:selected');
-                    val = $opt.text();
-                    var dn = $opt.attr('data-name');
-                    if (dn)
-                    {
-                        val = dn;
-                    }
-
-                    break;
+                // case 'Upload Font':
+                //
+                //     if ($input.attr('data-hide'))
+                //     {
+                //         return '';
+                //     }
+                //
+                //     var $opt = $input.find('option:selected');
+                //     val = $opt.text();
+                //     var dn = $opt.attr('data-name');
+                //     if (dn)
+                //     {
+                //         val = dn;
+                //     }
+                //
+                //     break;
 
                 case 'text':
                     val = $input.val();
@@ -257688,9 +257688,9 @@ else
                     val = $input.find('option:selected').val();
                     break;
 
-                case 'Upload Font':
-                    val = $input.find('option:selected').val();
-                    break;
+                // case 'Upload Font':
+                //     val = $input.find('option:selected').val();
+                //     break;
 
                 case 'text':
                     val = $input.val();
