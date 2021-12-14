@@ -257451,9 +257451,10 @@ else
                     var $opt = $input.find('option:selected');
                     val = $opt.text();
                     var dn = $opt.attr('data-name');
+                    const obj = JSON.parse(dn);
                     if (dn)
                     {
-                        val = dn;
+                        val = obj.name;
                     }
 
                     break;
