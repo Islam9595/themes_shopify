@@ -259493,6 +259493,12 @@ else
 
 
                 var opt_name = opt_data.name;
+
+                try {
+                    JSON.parse(opt_name);
+                } catch (e) {
+                    return false;
+                }
                 if (){
                 }
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
