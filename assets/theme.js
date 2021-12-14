@@ -259183,8 +259183,8 @@ else
         function getAvailableOptions(attr, prev_selected)
         {
             console.log('isalmemam');
-            console.log('getAvailableOptions', attr.name);
-            //console.log('prev_selected', prev_selected);
+            console.log('getAvailableOptions', attr);
+            console.log('prev_selected', prev_selected);
 
             var item = api_data[attr.ext.sku];
 
