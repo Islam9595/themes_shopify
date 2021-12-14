@@ -259493,13 +259493,9 @@ else
 
 
                 var opt_name = opt_data.name;
-
-                try {
-                    JSON.parse(opt_name);
-                } catch (e) {
-                    return false;
-                }
-                if (){
+                if (isJson(opt_name)){
+                    var opt_name =  JSON.parse(opt_name);
+                    opt_name=opt_name.name
                 }
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
 
@@ -259970,4 +259966,14 @@ catch(e)
 
 
 /* EXT_OPTS_JS_EMBED_END */
+
+
+function isJson(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
 
