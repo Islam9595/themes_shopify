@@ -257405,6 +257405,7 @@ else
             switch (attr.type)
             {
                 case 'list':
+                    case 
 
                     if ($input.attr('data-hide'))
                     {
