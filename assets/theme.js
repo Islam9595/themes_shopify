@@ -259488,19 +259488,12 @@ else
             for(var j=0; j < opts.length; j++)
             {
                 var opt_data = opts[j];
-                const text = '{"font_family":"Aguafina Script","font_style":"Regular","file_name":"sTlzKbzhCkNi0JOg.ttf"}';
-                // var      opt_name = opt_data.name;
-                const obj = JSON.parse(text);
-                opt_name = obj.font_family;
-                // try {
-                //     opt_name=(JSON.parse("'"+opt_data.name+"'")).font_family;
-                //     // console.log("omar");
-                //     // console.log(JSON.parse("'"+opt_data.name+"'"))
-                // } catch (e) {
-                //     opt_name = opt_data.name;
-                //     // console.log("alaa");
-                // }
-                // console.log((JSON.parse("'"+opt_data.name+"'")));
+                var opt_name;
+                try {
+                    opt_name=(JSON.parse("'"+opt_data.name+"'")).font_family;
+                } catch (e) {
+                    opt_name = opt_data.name;
+                }
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
 
                 if ($opt_existing.length > 0)
