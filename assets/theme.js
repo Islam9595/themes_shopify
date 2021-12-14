@@ -259508,8 +259508,8 @@ else
                         $opt_existing.removeAttr('disabled');
                     }
 
-                    $opt_existing.attr('data-name', opt_data.name_initial);
-                    $opt_existing.text(opt_name);
+                   // $opt_existing.attr('data-name', opt_data.name_initial);
+                   // $opt_existing.text(opt_name);
 
                     continue;
                 }
