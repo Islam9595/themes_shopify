@@ -257405,7 +257405,7 @@ else
             switch (attr.type)
             {
                 case 'list':
-                    case 
+                    case 'upload'
 
                     if ($input.attr('data-hide'))
                     {
