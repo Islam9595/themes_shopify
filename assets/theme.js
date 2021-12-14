@@ -259488,7 +259488,7 @@ else
             for(var j=0; j < opts.length; j++)
             {
                 var opt_data = opts[j];
-                const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+                const text = '{"font_family":"Aguafina Script","font_style":"Regular","file_name":"sTlzKbzhCkNi0JOg.ttf"}';
                 var      opt_name = opt_data.name;
                 const obj = JSON.parse(text);
                 opt_name = obj.name;
