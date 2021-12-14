@@ -259489,10 +259489,10 @@ else
             {
                 var opt_data = opts[j];
                 var opt_name
-                opt_name = opt_data.name;
-                if (isJson(opt_name)===true){
-                    console.log("islam")
-                    opt_name =  (JSON.parse(opt_data.name)).name;
+                try {
+                    opt_name=(JSON.parse(opt_data.name)).name;
+                } catch (e) {
+                    opt_name = opt_data.name;
                 }
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
 
@@ -259964,13 +259964,4 @@ catch(e)
 
 /* EXT_OPTS_JS_EMBED_END */
 
-
-function isJson(str) {
-    try {
-        JSON.parse(str);
-    } catch (e) {
-        return false;
-    }
-    return true;
-}
 
