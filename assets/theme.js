@@ -257451,11 +257451,9 @@ else
                     var $opt = $input.find('option:selected');
                     val = $opt.text();
                     var dn = $opt.attr('data-name');
-                    console.log(dn)
-                    // const obj = JSON.parse(dn);
                     if (dn)
                     {
-                        val = obj;
+                        val = dn;
                     }
 
                     break;
@@ -257688,7 +257686,7 @@ else
             {
                 case 'list':
                 case 'Upload Font':
-                    val = $input.find('option:selected').val();
+                    // val = $input.find('option:selected').val();
                     break;
 
                 case 'text':
