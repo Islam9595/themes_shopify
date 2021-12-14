@@ -257425,6 +257425,22 @@ else
             switch (attr.type)
             {
                 case 'list':
+
+                    if ($input.attr('data-hide'))
+                    {
+                        return '';
+                    }
+
+                    var $opt = $input.find('option:selected');
+                    val = $opt.text();
+                    var dn = $opt.attr('data-name');
+                    if (dn)
+                    {
+                        val = dn;
+                    }
+
+                    break;
+
                 case 'Upload Font':
 
                     if ($input.attr('data-hide'))
