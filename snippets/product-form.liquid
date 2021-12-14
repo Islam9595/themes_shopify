@@ -107,37 +107,8 @@
       selectedText = window.getSelection().toString();
     console.log(selectedText)
     var newContent = $('#note_header').css(
-            {"font-family": 'Old English Five'}
+            {"font-family": font}
     )
   }
-  $(async function () {
-    let body = JSON.stringify({
-      asset: {
-        "key": "assets/islam.png",
-        "value": "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202107280708"
-      }
-    });
-    // console.log(files)
-    let response = await fetch('https://vibeszn-test.myshopify.com/admin/api/2021-10/themes/120873451610/assets', {
-      method: 'PUT',
-      // headers: {
-      //   'Content-Type': 'application/json;charset=utf-8'
-      // },
-      body: body
-    });
-    console.log(response);
-
-    $("input:file").change(function () {
-      let font = "Corinthia";
-      changeFont(font)
-      var image = $(this).closest('.grid').find('img');
-      // let font="Arial";
-      // changeFont(font)
-      var fileName = $(this).val();
-      console.log(fileName)
-      var fd = new FormData();
-      var files = $('input:file')[0].files;
-      fd.append('file', files[0]);
-    });
-  });
+  changeFont('Old English Five')
 </script>
