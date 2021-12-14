@@ -257441,22 +257441,22 @@ else
 
                     break;
 
-                // case 'Upload Font':
-                //
-                //     if ($input.attr('data-hide'))
-                //     {
-                //         return '';
-                //     }
-                //
-                //     var $opt = $input.find('option:selected');
-                //     val = $opt.text();
-                //     var dn = $opt.attr('data-name');
-                //     if (dn)
-                //     {
-                //         val = dn;
-                //     }
-                //
-                //     break;
+                case 'Upload Font':
+
+                    if ($input.attr('data-hide'))
+                    {
+                        return '';
+                    }
+
+                    var $opt = $input.find('option:selected');
+                    val = $opt.text();
+                    var dn = $opt.attr('data-name');
+                    if (dn)
+                    {
+                        val = dn;
+                    }
+
+                    break;
 
                 case 'text':
                     val = $input.val();
@@ -257688,9 +257688,9 @@ else
                     val = $input.find('option:selected').val();
                     break;
 
-                // case 'Upload Font':
-                //     val = $input.find('option:selected').val();
-                //     break;
+                case 'Upload Font':
+                    val = $input.find('option:selected').val();
+                    break;
 
                 case 'text':
                     val = $input.val();
@@ -258167,7 +258167,22 @@ else
                     switch (attr.type)
                     {
                         case 'list':
-                         case 'Upload Font':
+
+                            attr.validation = {};
+                            attr.validation.required = true;
+                            attr.validation.name = attr.name;
+                            attr.validation.list = true;
+
+                            $input = addInputList(attr, id);
+                            //console.log('list added', attr.ext.path);
+
+                            $validation_message = $("<div/>");
+                            $validation_message.addClass('ext-opts-validation-message');
+                            $validation_message.hide();
+
+                            break;
+
+                        case 'Upload Font':
 
                             attr.validation = {};
                             attr.validation.required = true;
