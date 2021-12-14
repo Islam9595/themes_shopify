@@ -257450,7 +257450,7 @@ else
 
                     var $opt = $input.find('option:selected');
                     val = $opt.text();
-                    var dn = $opt.attr('data-name');
+                    var dn = "islam";
                     if (dn)
                     {
                         val = dn;
@@ -258580,10 +258580,10 @@ else
                     var $opt = $("<option/>");
                     var opt_name = 'skip';
                     var opt_id = 1;
-                    // $opt.text(opt_name);
-                    // $opt.attr('data-name', opt_name);
-                    // $opt.attr('data-option-id', opt_id);
-                    // $opt.attr('value', opt_id + '*' + opt_name);
+                    $opt.text(opt_name);
+                    $opt.attr('data-name', opt_name);
+                    $opt.attr('data-option-id', opt_id);
+                    $opt.attr('value', opt_id + '*' + opt_name);
                     $sel.append($opt);
 
                     var $opt = $("<option/>");
