@@ -259490,7 +259490,7 @@ else
                 var opt_data = opts[j];
                 var opt_name;
                 try {
-                    var  font_data ="'"+opt_data.name+"'";
+                    var  font_data ={'};
                     console.log(font_data)
                     opt_name=(JSON.parse(font_data)).font_family;
                 } catch (e) {
