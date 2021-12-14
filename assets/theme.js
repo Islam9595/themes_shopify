@@ -259487,6 +259487,7 @@ else
             for(var j=0; j < opts.length; j++)
             {
                 var opt_data = opts[j];
+                
                 var opt_name = opt_data.name;
                 var $opt_existing = $input.find("[data-option-id='" + opt_data.id + "']");
 
