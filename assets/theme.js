@@ -258189,7 +258189,7 @@ else
                             attr.validation.name = attr.name;
                             attr.validation.list = true;
 
-                          //  $input = addInputList(attr, id);
+                            $input = addInputList(attr, id);
                             //console.log('list added', attr.ext.path);
 
                             $validation_message = $("<div/>");
@@ -259514,9 +259514,9 @@ else
                     continue;
                 }
 
-                var $opt = $('<option/>');
-                $opt.text(opt_name);
-                $opt.attr('data-name', opt_data.name_initial);
+                // var $opt = $('<option/>');
+                // $opt.text(opt_name);
+                // $opt.attr('data-name', opt_data.name_initial);
 
                 var opt_id = opt_data.id + '*' + opt_data.name;
 
