@@ -259490,7 +259490,7 @@ else
                 var opt_data = opts[j];
                 const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
                 var      opt_name = opt_data.name;
-                const obj = JSON.parse(opt_name);
+                const obj = JSON.parse(text);
                 opt_name = obj.name;
                 // try {
                 //     opt_name=(JSON.parse("'"+opt_data.name+"'")).font_family;
