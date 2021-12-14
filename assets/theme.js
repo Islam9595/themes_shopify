@@ -259196,7 +259196,7 @@ else
 
             if (!item.active_combinations)
             {
-                return attr.options;
+              //  return attr.options;
             }
 
             var active_combinations = item.active_combinations;
