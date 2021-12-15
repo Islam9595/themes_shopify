@@ -119,7 +119,10 @@
     $('#display_font').remove()
     var textArea = $('<textarea style="padding-left:100px" />');
     textArea.text((JSON.parse(ext_opts_serialize))[custom_text]);
-    $(this).after(<div id="display_font"><label>Result</label>+textArea+</div>);
+    $(this).after("</div>");
+    $(this).after(textArea);
+    $(this).after("<label>Result</label>");
+    $(this).after('<div id="display_font">');
   });
   });
 </script>
