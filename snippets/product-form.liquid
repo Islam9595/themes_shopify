@@ -36,9 +36,9 @@
 
   {% comment %}<label>color</label>{% endcomment %}
   {% comment %}<input type="text" >{% endcomment %}
-    <label>Result :</label>
-    <textarea disabled contenteditable="true" id="note_header" style="width:200px; height:50px; border: 1px solid #ccc">
-    </textarea>
+    {% comment %}<label>Result :</label>{% endcomment %}
+    {% comment %}<textarea disabled contenteditable="true" id="note_header" style="width:200px; height:50px; border: 1px solid #ccc">{% endcomment %}
+    {% comment %}</textarea>{% endcomment %}
     <hr>
 
   {% if settings.quantity_enable %}
@@ -109,5 +109,13 @@
             {"font-family": font, "font-style" : 'italic'}
     )
   }
+  $('select[data-input-type=UploadFont]').on('change', function (e) {
+    let form=$(this).closest('form');
+      let custom_text=form.find('input[type=text]').text()
+    console.log(custom_text)
+    var textArea = $('<textarea style="padding-left:100px" />');
+    textArea.text(custom_text);
+      form.find('button[type=submit]').prepend(textArea);
+  });
   changeFont('Old English Five')
 </script>
