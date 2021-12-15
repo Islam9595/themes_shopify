@@ -126,7 +126,7 @@
     textArea.text((JSON.parse(ext_opts_serialize))[custom_text]);
     $(this).after(textArea);
     $(this).after("<label id='result'>Result</label>");
-    changeFont(json_font_data.font_family)
+    changeFont(json_font_data.font_family,json_font_data.font_style)
   });
   });
 </script>
