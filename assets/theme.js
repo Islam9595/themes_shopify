@@ -258403,7 +258403,7 @@ else
                     switch (attr.type)
                     {
                         case 'list':
-                        case 'UploadFont':
+                        case 'UploadFont' :
 
                             attr.validation = {};
                             attr.validation.required = true;
