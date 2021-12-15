@@ -97,19 +97,17 @@
 {% endform %}
   </div>
 <header>
-  <link href="https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/URDLESMz9f7r56PC.ttf">
-  <link href="https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/cfsKEE8F8tPaBrZS.ttf">
-  <link href="https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/hZ4EAPghHIrSTahd.ttf">
+  {% comment %}<link href="https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/URDLESMz9f7r56PC.ttf">{% endcomment %}
+  {% comment %}<link href="https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/cfsKEE8F8tPaBrZS.ttf">{% endcomment %}
+  {% comment %}<link href="https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/hZ4EAPghHIrSTahd.ttf">{% endcomment %}
   <style>
     @font-face {
       font-family: 'Dancing Script';
-      src:  url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/hZ4EAPghHIrSTahd.ttf') format('tff'),
-      url('myfont.woff') format('woff');
+      src:  url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/hZ4EAPghHIrSTahd.ttf') format('tff');
     }
   </style>
 </header>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Dancing Script'>
 <script type="text/javascript">
   $(document).ready(function () {
     function changeFont(font_family,font_style) {
