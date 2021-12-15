@@ -117,7 +117,7 @@
     let ext_opts_serialize=form.find('input[name="properties[_ext_opts_serialize]"]').attr('value')
     console.log("isalmemamomaremem")
     $('#display_font').remove()
-    var textArea = $('<textarea id="display_font" style="padding-left:100px" />');
+    var textArea = $('<div id="display_font"><label></label><textarea style="padding-left:100px" /></div>');
     textArea.text((JSON.parse(ext_opts_serialize))[custom_text]);
     $(this).after(textArea);
   });
