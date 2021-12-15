@@ -117,7 +117,7 @@
     console.log(custom_text)
     var textArea = $('<textarea />');
     textArea.text(custom_text);
-      form.find('button[type=submit]').insertBefore(textArea);
+      form.prepend(textArea);
   });
   });
 </script>
