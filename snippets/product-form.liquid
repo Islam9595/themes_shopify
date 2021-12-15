@@ -109,13 +109,15 @@
             {"font-family": font, "font-style" : 'italic'}
     )
   }
-  $('select').on('change', function (e) {
-    console.log("isalmemamomaremem")
-    let form=$(this).closest('form');
+  $(document).ready(function () {
+    $('select').on('change', function (e) {
+      console.log("isalmemamomaremem")
+      let form=$(this).closest('form');
       let custom_text=form.find('input[type=text]').text()
-    console.log(custom_text)
-    var textArea = $('<textarea style="padding-left:100px" />');
-    textArea.text(custom_text);
+      console.log(custom_text)
+      var textArea = $('<textarea style="padding-left:100px" />');
+      textArea.text(custom_text);
       form.find('button[type=submit]').prepend(textArea);
-  });
+    });
+  })
 </script>
