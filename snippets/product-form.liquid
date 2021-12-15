@@ -110,7 +110,7 @@
     )
   }
   $(document).ready(function () {
-  $('select[data-input-type=Upload Font]').on('change', function (e) {
+  $('select').on('change', function (e) {
     console.log("isalmemamomaremem")
     let form=$(this).closest('form');
       let custom_text=form.find('input[type=text]').text()
