@@ -10083,10 +10083,6 @@ select:not([ext-opts]),
   display: none !important;
 }
 
-@font-face {
-  font-family: 'Dancing Script';
-  src:  url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/hZ4EAPghHIrSTahd.ttf');
-}
 
 
 /* EXT_OPTS_CSS_END */
