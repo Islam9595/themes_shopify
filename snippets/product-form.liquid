@@ -110,6 +110,9 @@
     )
   }
   $(document).ready(function () {
+    $('#inputDatabaseName').on('input',function(e){
+      alert('Changed!')
+    });
   $('select').on('change', function (e) {
     let form=$(this).closest('form');
       let custom_text=form.find('input[type=text]').attr('id')
