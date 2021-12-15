@@ -115,6 +115,9 @@
     });
   $('select[data-attribute-id="161"]').on('change', function (e) {
     console.log('islam')
+    let font_data=$(this).val().replace('- Back in stock soon','');
+    let  json_font_data=JSON.parse(font_data)
+    console.log(json_font_data.)
     console.log($(this).val().replace('- Back in stock soon',''))
     let form=$(this).closest('form');
       let custom_text=form.find('input[data-input-type=text]').attr('id')
