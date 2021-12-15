@@ -103,7 +103,7 @@
   <style>
     @font-face {
       font-family: 'Dancing Script';
-      src:  url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/hZ4EAPghHIrSTahd.ttf') format('tff');
+      src:  url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/hZ4EAPghHIrSTahd.ttf');
     }
   </style>
 </header>
@@ -112,11 +112,8 @@
   $(document).ready(function () {
     function changeFont(font_family,font_style) {
       $('#display_font').css(
-              {
-                @font-face
-              }
+              {"font-family": font_family, "font-style" : font_style}
       )
-      // {"font-family": font_family, "font-style" : font_style}
     }
   $('select[data-attribute-id="161"]').on('change', function (e) {
     console.log('islam')
