@@ -1,137 +1,16 @@
-<header>
-  {% comment %}<link href="https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/URDLESMz9f7r56PC.ttf">{% endcomment %}
-  {% comment %}<link href="https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/cfsKEE8F8tPaBrZS.ttf">{% endcomment %}
-  {% comment %}<link href="https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/hZ4EAPghHIrSTahd.ttf">{% endcomment %}
-  <style>
+<html>
+<head>
+  <title>Web Font Sample</title>
+  <style type="text/css" media="screen, print">
     @font-face {
-      font-family: 'Dancing Script';
-      src:  url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/hZ4EAPghHIrSTahd.ttf');
+      font-family: "Bitstream Vera Serif Bold";
+      src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
     }
+
+    body { font-family: "Bitstream Vera Serif Bold", serif }
   </style>
-</header>
-{% capture form_id %}AddToCartForm-{{ section_id }}{% endcapture %}
-{% form 'product', product, id: form_id, class: 'product-single__form' %}
-  {% unless product.has_only_default_variant %}
-    {% for option in product.options_with_values %}
-      {% if settings.variant_type == 'button' %}
-        {% render 'variant-button',
-          section_id: section_id,
-          option: option,
-          forloop: forloop
-        %}
-      {% else %}
-        {% render 'variant-dropdown',
-          section_id: section_id,
-          option: option,
-          forloop: forloop
-        %}
-      {% endif %}
-    {% endfor %}
-  {% endunless %}
-
-  <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
-    {% for variant in product.variants %}
-      {% if variant.available %}
-        <option {% if variant == product.selected_or_first_available_variant %}
-          selected="selected" {% endif %}
-          value="{{ variant.id }}">
-          {{ variant.title }} - {{ variant.price | money_with_currency }}
-        </option>
-      {% else %}
-        <option disabled="disabled">
-          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-        </option>
-      {% endif %}
-    {% endfor %}
-  </select>
-
-  {% comment %}<label>color</label>{% endcomment %}
-  {% comment %}<input type="text" >{% endcomment %}
-    {% comment %}<label>Result :</label>{% endcomment %}
-    {% comment %}<textarea disabled contenteditable="true" id="note_header" style="width:200px; height:50px; border: 1px solid #ccc">{% endcomment %}
-    {% comment %}</textarea>{% endcomment %}
-    <hr>
-
-  {% if settings.quantity_enable %}
-    <div class="product__quantity product__quantity--{{ settings.variant_type }}">
-      <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>
-      {% render 'quantity-input', id: section_id, qty: 1, min: 1 %}
-    </div>
-  {% endif %}
-
-  {%- assign enable_dynamic_buttons = false -%}
-  {% if settings.enable_payment_button and template != 'product.preorder' %}
-    {%- assign enable_dynamic_buttons = true -%}
-  {% endif %}
-
-  {% if enable_dynamic_buttons %}
-    <div class="payment-buttons">
-  {% endif %}
-
-    {%- assign button_text = 'products.product.add_to_cart' | t -%}
-    {%- if current_variant.available -%}
-      {%- if template == 'product.preorder' -%}
-        {%- assign button_text = 'products.product.preorder' | t -%}
-      {%- endif -%}
-    {%- else -%}
-      {%- assign button_text = 'products.product.sold_out' | t -%}
-    {%- endif -%}
-
-    <button
-      {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
-      name="add"
-      id="AddToCart-{{ section_id }}"
-      class="{% if enable_dynamic_buttons %}btn--tertiary{% else %}btn{% endif %} btn--full btn--no-animate add-to-cart"
-      {% unless current_variant.available %} disabled="disabled"{% endunless %}>
-      <span id="AddToCartText-{{ section_id }}" data-default-text="{{ button_text }}">
-        {{ button_text }}
-      </span>
-    </button>
-
-
-    {% if enable_dynamic_buttons %}
-      {{ form | payment_button }}
-    {% endif %}
-
-  {% if enable_dynamic_buttons %}
-    </div>
-  {% endif %}
-
-  <textarea id="VariantsJson-{{ section_id }}" class="hide" aria-hidden="true">
-    {{ product.variants | json }}
-  </textarea>
-  {% if product.options.size > 1 %}
-    <textarea id="CurrentVariantJson-{{ section_id }}" class="hide" aria-hidden="true">
-      {{ current_variant | json }}
-    </textarea>
-  {% endif %}
-{% endform %}
-  </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function () {
-    function changeFont(font_family,font_style) {
-      $('#display_font').css(
-              {"font-family": 'Dancing Script'}
-      )
-    }
-  $('select[data-attribute-id="161"]').on('change', function (e) {
-    console.log('islam')
-    let font_data=$(this).find('option:selected').attr('data-name').replace('- Back in stock soon','');
-    console.log(font_data)
-    let  json_font_data=JSON.parse(font_data)
-    console.log('islam')
-    console.log(json_font_data)
-    let form=$(this).closest('form');
-      let custom_text=form.find('input[data-input-type=text]').attr('id')
-    let ext_opts_serialize=form.find('input[name="properties[_ext_opts_serialize]"]').attr('value')
-    $('#result').remove()
-    $('#display_font').remove()
-    var textArea = $('<textarea  id="display_font" />');
-    textArea.text((JSON.parse(ext_opts_serialize))[custom_text]);
-    $(this).after(textArea);
-    $(this).after("<label id='result'>Result</label>");
-    changeFont(json_font_data.font_family,json_font_data.font_style)
-  });
-  });
-</script>
+</head>
+<body>
+This is Bitstream Vera Serif Bold.
+</body>
+</html>
