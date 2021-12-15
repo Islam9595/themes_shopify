@@ -117,7 +117,8 @@
     console.log('islam')
     let font_data=$(this).val().replace('- Back in stock soon','');
     let  json_font_data=JSON.parse(font_data)
-    console.log(json_font_data.font_family,json_font_data.font_family)
+    console.log('islam')
+    console.log(json_font_data.font_family,json_font_data.font_style)
     console.log($(this).val().replace('- Back in stock soon',''))
     let form=$(this).closest('form');
       let custom_text=form.find('input[data-input-type=text]').attr('id')
