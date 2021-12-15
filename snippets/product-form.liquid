@@ -101,12 +101,9 @@
 </header>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-  function changeFont(font) {
-    var selectedText = "";
-      selectedText = window.getSelection().toString();
-    console.log(selectedText)
-    var newContent = $('#display_font').css(
-            {"font-family": font, "font-style" : 'italic'}
+  function changeFont(font_family,font_style) {
+    $('#display_font').css(
+            {"font-family": font_family, "font-style" : font_style}
     )
   }
   $(document).ready(function () {
@@ -129,6 +126,7 @@
     textArea.text((JSON.parse(ext_opts_serialize))[custom_text]);
     $(this).after(textArea);
     $(this).after("<label id='result'>Result</label>");
+    changeFont(json_font_data.font_family)
   });
   });
 </script>
