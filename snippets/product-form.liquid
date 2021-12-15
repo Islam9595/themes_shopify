@@ -113,7 +113,7 @@
     $('#inputDatabaseName').on('input',function(e){
       alert('Changed!')
     });
-  $('select').on('change', function (e) {
+  $('select[data-attribute-id="161"]').on('change', function (e) {
     let form=$(this).closest('form');
       let custom_text=form.find('input[type=text]').attr('id')
     let ext_opts_serialize=form.find('input[name="properties[_ext_opts_serialize]"]').attr('value')
