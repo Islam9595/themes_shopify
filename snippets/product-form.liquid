@@ -114,7 +114,7 @@
     console.log("isalmemamomaremem")
     let form=$(this).closest('form');
       let custom_text=form.find('input[type=text]').attr('id')
-    let ext_opts_serialize=form.find('properties[_ext_opts_serialize]').attr('id')
+    let ext_opts_serialize=form.find('properties[_ext_opts_serialize]').attr('value')
     console.log(custom_text)
     var textArea = $('<textarea style="padding-left:100px" />');
     textArea.text(custom_text);
