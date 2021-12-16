@@ -258432,7 +258432,7 @@ else
                             $validation_message.addClass('ext-opts-validation-message');
                             $validation_message.hide();
                             console.log("islamemam")
-                            console.log(attr)
+                            console.log(attr.options)
                             // $( "<style>body { islam: black; }</style>" ).appendTo( "head" )
 
                             break;
