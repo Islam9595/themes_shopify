@@ -259703,8 +259703,13 @@ else
             console.log('old',opts)
             let new_opts=[];
             opts.forEach(function(option_to_edit){
-                option_to_edit=(JSON.parse(option_to_edit.name_initial)).font_family;
-                new_opts.push(option_to_edit);
+                try{
+                    option_to_edit=(JSON.parse(option_to_edit.name_initial)).font_family;
+                    new_opts.push(option_to_edit);
+                }
+                catch(e){
+
+                }
             })
             if (new_opts.length>0){
                 opts=new_opts;
