@@ -257680,7 +257680,7 @@ else
             switch (attr.type)
             {
                 case 'list':
-                case 'UploadFont':
+                // case 'UploadFont':
 
                     if ($input.attr('data-hide'))
                     {
@@ -257924,7 +257924,7 @@ else
             switch(type)
             {
                 case 'list':
-                case 'UploadFont':
+                // case 'UploadFont':
                     val = $input.find('option:selected').val();
                     break;
 
@@ -258403,7 +258403,7 @@ else
                     switch (attr.type)
                     {
                         case 'list':
-                        case 'UploadFont' :
+
 
                             attr.validation = {};
                             attr.validation.required = true;
