@@ -109,10 +109,9 @@
   $(document).ready(function () {
     function changeFont(font_family,font_style) {
       $('#display_font').css(
-              {"font-family": font_family,"font-style": font_style ,  'font-size': '30px'}
+              {"font-family": font_family,"font-style": font_style ,'font-size': '30px'}
       )
     }
-
     function updateFontWithText(element) {
       let font_data=element.find('option:selected').attr('data-name').replace('- Back in stock soon','');
       console.log(font_data)
