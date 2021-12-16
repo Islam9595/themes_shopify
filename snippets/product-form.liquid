@@ -113,12 +113,9 @@
       )
     }
   $('select[data-attribute-id="161"]').on('change', function (e) {
-    console.log('islam')
     let font_data=$(this).find('option:selected').attr('data-name').replace('- Back in stock soon','');
     console.log(font_data)
     let  json_font_data=JSON.parse(font_data)
-    console.log('islam')
-    console.log(json_font_data)
     let form=$(this).closest('form');
       let custom_text=form.find('input[data-input-type=text]').attr('id')
     let ext_opts_serialize=form.find('input[name="properties[_ext_opts_serialize]"]').attr('value')
