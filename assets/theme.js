@@ -259702,7 +259702,13 @@ else
             blank.name = 'select option';
 
             for (let option_to_edit in opts){
-                if
+                try{
+                    
+                }
+                catch (e) {
+                    
+                }
+                if (typeof )
             }
 
             if (!$input.attr('data-hide'))
