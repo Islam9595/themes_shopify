@@ -258431,8 +258431,9 @@ else
                             $validation_message = $("<div/>");
                             $validation_message.addClass('ext-opts-validation-message');
                             $validation_message.hide();
+                            console.log("islamemam")
                             console.log(attr)
-                            $( "<style>body { islam: black; }</style>" ).appendTo( "head" )
+                            // $( "<style>body { islam: black; }</style>" ).appendTo( "head" )
 
                             break;
 
