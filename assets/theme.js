@@ -259697,7 +259697,7 @@ else
         function addOptsToSelect($input, opts)
         {
             console.log('omaremam')
-            console.log($input)
+            console.log(opts)
             var blank = {};
             blank.id = '';
             blank.name = 'select option';
