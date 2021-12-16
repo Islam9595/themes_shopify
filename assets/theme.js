@@ -258436,6 +258436,7 @@ else
                             let fonts=ttr.options;
                             for (let fonts in font_data) {
                                 console.log(attr.options)
+                                let font_meta_data=JSON.parse(font_data.name)
                                 flet font_family=
                                 font_data.name
 
