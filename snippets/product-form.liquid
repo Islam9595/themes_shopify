@@ -133,7 +133,7 @@
     updateFontWithText($(this))
   });
     $('input[type=text]').on('input',function(e){
-      let select_font=$('select[data-input-typeUploadFont=]');
+      let select_font=$('select[data-input-type=UploadFont]');
       if(select_font.length>0){
         updateFontWithText(select_font)
       }
