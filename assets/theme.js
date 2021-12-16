@@ -258435,12 +258435,8 @@ else
                             let start_style="<style>";
                             let end_style="</style>";
                             let all_font_faces;
-                            attr.options.forEach(function{
-                                
-                            })
-                            for (let font_data in attr.options) {
-                                console.log(font_data.name)
-                                let font_meta_data = JSON.parse(font_data.name);
+                            attr.options.forEach(function(font) {
+                                let font_meta_data = JSON.parse(font.name);
                                 console.log(font_meta_data)
                                 let font_face = `@font-face { 
                                      font-family: '${font_meta_data.font_family}';
@@ -258448,7 +258444,7 @@ else
                                     src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${font_meta_data.file_name}') format('truetype');" +
                                     " }`
                                 all_font_faces += font_face
-                            }
+                            })
                              $( start_style + all_font_faces + end_style).appendTo( "head" )
 
                             break;
