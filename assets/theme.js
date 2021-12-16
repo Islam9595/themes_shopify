@@ -259696,10 +259696,11 @@ else
 
         function addOptsToSelect($input, opts)
         {
-            console.log('omaremam')
             var blank = {};
             blank.id = '';
             blank.name = 'select option';
+            console.log('omaremam')
+            console.log('old',opts)
             let new_opts=[];
             for (let option_to_edit in opts){
                 try{
@@ -259713,7 +259714,7 @@ else
             if (new_opts.length>0){
                 opts=new_opts;
             }
-            console.log(opts)
+            console.log('new',opts)
 
             if (!$input.attr('data-hide'))
             {
