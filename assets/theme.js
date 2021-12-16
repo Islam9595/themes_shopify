@@ -258437,7 +258437,7 @@ else
                             let start_style="<style>";
                             let end_style="</style>";
                             let all_font_faces;
-                            for (let fonts in font_data) {
+                            for (let font_data in fonts) {
                                 console.log(attr.options)
                                 let font_meta_data = JSON.parse(font_data.name);
                                 let font_family = font_meta_data.font_family;
