@@ -132,7 +132,7 @@
     }
 
     $('select[data-attribute-id="161"]').on('change', function (e) {
-      let font_data=element.find('option:selected').attr('value');
+      let font_data=$(this).find('option:selected').attr('value');
       console.log(font_data)
       updateFontWithText($(this))
   });
