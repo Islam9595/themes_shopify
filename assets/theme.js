@@ -258431,27 +258431,27 @@ else
                             $validation_message = $("<div/>");
                             $validation_message.addClass('ext-opts-validation-message');
                             $validation_message.hide();
-                            console.log("islamemam")
-                            console.log(attr.options)
-                            let fonts=ttr.options;
-                            let all_font__faces='';
-                            let start_style="<style>";
-                            let end_style="</style>";
-                            let all_font_faces;
-                            for (let fonts in font_data) {
-                                console.log(attr.options)
-                                let font_meta_data = JSON.parse(font_data.name);
-                                let font_family = font_meta_data.font_family;
-                                let font_style = font_meta_data.font_style;
-                                let file_name = font_meta_data.file_name;
-                                let font_face = `@font-face { 
-                                     font-family: '${font_family}';
-                                     font-style : '${font_style}'
-                                    src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${file_name}') format('truetype');" +
-                                    " }`
-                                all_font_faces += font_face
-                            }
-                             $( start_style + all_font_faces + end_style).appendTo( "head" )
+                            // console.log("islamemam")
+                            // console.log(attr.options)
+                            // let fonts=ttr.options;
+                            // let all_font__faces='';
+                            // let start_style="<style>";
+                            // let end_style="</style>";
+                            // let all_font_faces;
+                            // for (let fonts in font_data) {
+                            //     console.log(attr.options)
+                            //     let font_meta_data = JSON.parse(font_data.name);
+                            //     let font_family = font_meta_data.font_family;
+                            //     let font_style = font_meta_data.font_style;
+                            //     let file_name = font_meta_data.file_name;
+                            //     let font_face = `@font-face {
+                            //          font-family: '${font_family}';
+                            //          font-style : '${font_style}'
+                            //         src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${file_name}') format('truetype');" +
+                            //         " }`
+                            //     all_font_faces += font_face
+                            // }
+                            //  $( start_style + all_font_faces + end_style).appendTo( "head" )
 
                             break;
 
