@@ -258440,7 +258440,9 @@ else
                                 let  font_family=font_meta_data.font_family;
                                 let  font_style=font_meta_data.font_style;
                                 let  file_name=font_meta_data.file_name;
-                                
+                                let start_style="<style>";
+                                let end_style="</style>";
+
 
                             }
                             // $( "<style>body { islam: black; }</style>" ).appendTo( "head" )
