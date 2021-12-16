@@ -259701,15 +259701,11 @@ else
             blank.name = 'select option';
             console.log('omaremam')
             console.log('old',opts)
-            let new_opts=[];
+            let new_opts=array();
             for (let option_to_edit in opts){
-                try{
-                    option_to_edit=(JSON.parse(option_to_edit.name)).font_family;                     console.log(option_to_edit)
-                    new_opts.push(option_to_edit);
-                }
-                catch (e) {
-                    option_to_edit=option_to_edit.name
-                }
+                option_to_edit=(JSON.parse(option_to_edit.name)).font_family;                     console.log(option_to_edit)
+                new_opts.push(option_to_edit);
+
             }
             if (new_opts.length>0){
                 opts=new_opts;
