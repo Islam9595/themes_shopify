@@ -259703,7 +259703,7 @@ else
 
             for (let option_to_edit in opts){
                 try{
-                    option_to_edit=(JSON.parse(option_to_edit.name)).name
+                    option_to_edit=(JSON.parse(option_to_edit.name)).font_family
                 }
                 catch (e) {
                     option_to_edit=option_to_edit.name
