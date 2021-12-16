@@ -258439,7 +258439,7 @@ else
                             let all_font_faces;
                             for (let font_data in fonts) {
                                 console.log(attr.options)
-                                let font_meta_data = JSON.parse(font_data.name);
+                                let font_meta_data = font_data.name;
                                 let font_family = font_meta_data.font_family;
                                 let font_style = font_meta_data.font_style;
                                 let file_name = font_meta_data.file_name;
