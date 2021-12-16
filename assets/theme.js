@@ -258437,10 +258437,10 @@ else
                             for (let fonts in font_data) {
                                 console.log(attr.options)
                                 let font_meta_data=JSON.parse(font_data.name)
-                                let flot font_family=font_meta_data.font_family
-                                let flot font_family=font_meta_data.font_style
-                                let flot font_family=font_meta_data.font_style
-                                font_data.name
+                                let  font_family=font_meta_data.font_family;
+                                let  font_style=font_meta_data.font_style;
+                                let  file_name=font_meta_data.file_name;
+                                
 
                             }
                             // $( "<style>body { islam: black; }</style>" ).appendTo( "head" )
