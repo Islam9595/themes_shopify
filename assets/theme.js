@@ -259702,12 +259702,10 @@ else
             console.log('omaremam')
             console.log('old',opts)
             let new_opts=[];
-            for (let option_to_edit in opts){
-                // option_to_edit=(JSON.parse(option_to_edit.name_initial)).font_family;
-                console.log(option_to_edit)
+            opts.forEach(function(option_to_edit){
+                option_to_edit=(JSON.parse(option_to_edit.name_initial)).font_family;
                 new_opts.push(option_to_edit);
-
-            }
+            })
             if (new_opts.length>0){
                 opts=new_opts;
             }
