@@ -258424,6 +258424,7 @@ else
                             attr.validation.required = true;
                             attr.validation.name = attr.name;
                             attr.validation.list = true;
+                            console.log(attr)
 
                             $input = addInputList(attr, id);
                             //console.log('list added', attr.ext.path);
