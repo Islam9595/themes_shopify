@@ -258432,8 +258432,6 @@ else
                             $validation_message.addClass('ext-opts-validation-message');
                             $validation_message.hide();
                             console.log("islamemam")
-                            let start_style="<style>";
-                            let end_style="</style>";
                             let all_font_faces;
                             attr.options.forEach(function(font) {
                                 let font_meta_data = JSON.parse(font.name);
@@ -258444,7 +258442,7 @@ else
                                     src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${font_meta_data.file_name}') format('truetype'); }`
                                 all_font_faces += font_face
                             })
-                             $( start_style + all_font_faces + end_style).appendTo( "head" )
+                             $( "<style>" + all_font_faces + "</style>").appendTo( "head" )
 
                             break;
 
