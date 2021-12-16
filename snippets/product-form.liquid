@@ -136,6 +136,9 @@
       if(font_data.length>0){
         updateFontWithText($(this))
       }
+      if(font_data.length==0){
+        updateFontWithText($(this))
+      }
   });
     $('input[type=text]').on('blur',function(e){
       let select_font=$('select[data-input-type=UploadFont]');
