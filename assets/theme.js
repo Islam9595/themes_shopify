@@ -259833,7 +259833,7 @@ else
             }
 
             addOptsToSelect($input, opts);
-            if (attr.)
+            if (attr.type==)
 
 
             var item = api_data[attr.ext.sku];
