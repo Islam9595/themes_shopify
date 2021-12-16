@@ -258433,6 +258433,9 @@ else
                             $validation_message.hide();
                             console.log("islamemam")
                             console.log(attr.options)
+                            for (let attr.options in font_data) {
+                                text += person[x];
+                            }
                             // $( "<style>body { islam: black; }</style>" ).appendTo( "head" )
 
                             break;
