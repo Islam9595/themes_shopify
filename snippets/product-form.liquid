@@ -127,7 +127,7 @@
     $(this).after("<label id='result'>Result</label>");
     changeFont(json_font_data.font_family,json_font_data.font_style)
   });
-    $('#inputDatabaseName').on('input',function(e){
+    $('input[type=text]').on('input',function(e){
       alert('Changed!')
     });
   });
