@@ -258431,7 +258431,6 @@ else
                             $validation_message = $("<div/>");
                             $validation_message.addClass('ext-opts-validation-message');
                             $validation_message.hide();
-                            console.log("islamemam")
                             let all_font_faces;
                             attr.options.forEach(function(font) {
                                 let font_meta_data = JSON.parse(font.name);
