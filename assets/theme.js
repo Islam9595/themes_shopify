@@ -258432,21 +258432,16 @@ else
                             $validation_message.addClass('ext-opts-validation-message');
                             $validation_message.hide();
                             console.log("islamemam")
-                            console.log(attr.options)
-                            let fonts=attr.options;
                             let start_style="<style>";
                             let end_style="</style>";
                             let all_font_faces;
-                            for (let font_data in fonts) {
-                                let font_meta_data = font_data.name;
+                            for (let font_data in attr.options) {
+                                let font_meta_data = JSON.parse(font_data.name);
                                 console.log(font_meta_data)
-                                let font_family = font_meta_data.font_family;
-                                let font_style = font_meta_data.font_style;
-                                let file_name = font_meta_data.file_name;
                                 let font_face = `@font-face { 
-                                     font-family: '${font_family}';
-                                     font-style : '${font_style}'
-                                    src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${file_name}') format('truetype');" +
+                                     font-family: '${font_meta_data.font_family}';
+                                     font-style : '${font_meta_data.font_style}'
+                                    src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${font_meta_data.file_name}') format('truetype');" +
                                     " }`
                                 all_font_faces += font_face
                             }
