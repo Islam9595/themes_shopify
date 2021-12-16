@@ -259713,6 +259713,7 @@ else
             if (new_opts.length>0){
                 opts=new_opts;
             }
+            console.log(opts)
 
             if (!$input.attr('data-hide'))
             {
