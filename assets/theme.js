@@ -258435,6 +258435,7 @@ else
                             console.log(attr.options)
                             let fonts=ttr.options;
                             for (let fonts in font_data) {
+                                font_data.name
 
                             }
                             // $( "<style>body { islam: black; }</style>" ).appendTo( "head" )
