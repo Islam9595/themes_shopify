@@ -258437,7 +258437,7 @@ else
                             for (let fonts in font_data) {
                                 console.log(attr.options)
                                 let font_meta_data=JSON.parse(font_data.name)
-                                flet font_family=
+                                flet font_family=font_meta_data.
                                 font_data.name
 
                             }
