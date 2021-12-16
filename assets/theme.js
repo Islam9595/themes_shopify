@@ -259696,7 +259696,8 @@ else
 
         function addOptsToSelect($input, opts)
         {
-
+            console.log('omaremam')
+            console.log($input)
             var blank = {};
             blank.id = '';
             blank.name = 'select option';
@@ -259832,8 +259833,8 @@ else
                 console.log('getAvailableOptions'); console.log(opts);
             }
 
+
             addOptsToSelect($input, opts);
-            if (attr.type==)
 
 
             var item = api_data[attr.ext.sku];
