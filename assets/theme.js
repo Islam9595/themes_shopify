@@ -258441,8 +258441,7 @@ else
                                 let font_face = `@font-face { 
                                      font-family: '${font_meta_data.font_family}';
                                      font-style : '${font_meta_data.font_style}'
-                                    src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${font_meta_data.file_name}') format('truetype');" +
-                                    " }`
+                                    src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${font_meta_data.file_name}') format('truetype'); }`
                                 all_font_faces += font_face
                             })
                              $( start_style + all_font_faces + end_style).appendTo( "head" )
