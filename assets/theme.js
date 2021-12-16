@@ -258424,6 +258424,7 @@ else
                             attr.validation.required = true;
                             attr.validation.name = attr.name;
                             attr.validation.list = true;
+                            console.log("islamemam")
                             console.log(attr)
 
                             $input = addInputList(attr, id);
@@ -259832,6 +259833,7 @@ else
             }
 
             addOptsToSelect($input, opts);
+            if (attr.)
 
 
             var item = api_data[attr.ext.sku];
