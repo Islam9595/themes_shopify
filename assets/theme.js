@@ -259700,11 +259700,11 @@ else
             var blank = {};
             blank.id = '';
             blank.name = 'select option';
-            new_opts=[];
+            let new_opts=[];
             for (let option_to_edit in opts){
                 try{
                     option_to_edit=(JSON.parse(option_to_edit.name)).font_family
-                    new_opts[]=option_to_edit;
+                    new_opts.push(option_to_edit);
                 }
                 catch (e) {
                     option_to_edit=option_to_edit.name
