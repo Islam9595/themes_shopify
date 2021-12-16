@@ -258419,6 +258419,23 @@ else
 
                             break;
 
+                        case 'UploadFont':
+
+
+                            attr.validation = {};
+                            attr.validation.required = true;
+                            attr.validation.name = attr.name;
+                            attr.validation.list = true;
+
+                            $input = addInputList(attr, id);
+                            //console.log('list added', attr.ext.path);
+
+                            $validation_message = $("<div/>");
+                            $validation_message.addClass('ext-opts-validation-message');
+                            $validation_message.hide();
+
+                            break;
+
                         case 'text':
                             $input = addInputText(attr, id, input_id);
 
