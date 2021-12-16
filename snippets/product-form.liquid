@@ -137,6 +137,8 @@
         updateFontWithText(select_font)
       }
       else if($(this).text.length==0){
+        $('#result').remove()
+        $('#display_font').remove()
       }
     });
   });
