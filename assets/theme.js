@@ -259701,6 +259701,10 @@ else
             blank.id = '';
             blank.name = 'select option';
 
+            for (let option_to_edit in opts){
+                if
+            }
+
             if (!$input.attr('data-hide'))
             {
                 if (opts.length > 1 && 'first' != params.default_option_behavior)
