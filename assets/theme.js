@@ -258435,6 +258435,7 @@ else
                             console.log(attr.options)
                             let fonts=ttr.options;
                             for (let fonts in font_data) {
+                                console.log(attr.options)
                                 font_data.name
 
                             }
