@@ -258420,8 +258420,6 @@ else
                             break;
 
                         case 'UploadFont':
-
-
                             attr.validation = {};
                             attr.validation.required = true;
                             attr.validation.name = attr.name;
