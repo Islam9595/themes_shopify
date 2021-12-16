@@ -259710,7 +259710,9 @@ else
                     option_to_edit=option_to_edit.name
                 }
             }
-            if (new_opts.)
+            if (new_opts.length>0){
+                opts=new_opts;
+            }
 
             if (!$input.attr('data-hide'))
             {
