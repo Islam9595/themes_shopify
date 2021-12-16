@@ -112,6 +112,10 @@
               {"font-family": font_family,"font-style": font_style ,'font-size': '30px'}
       )
     }
+    function removeTextArea() {
+      $('#result').remove()
+      $('#display_font').remove()
+    }
     function updateFontWithText(element) {
       let font_data=element.find('option:selected').attr('data-name')
       if(font_data.trim().length){
@@ -121,8 +125,7 @@
         let form=element.closest('form');
         let custom_text=form.find('input[data-input-type=text]').attr('id')
         let ext_opts_serialize=form.find('input[name="properties[_ext_opts_serialize]"]').attr('value')
-        $('#result').remove()
-        $('#display_font').remove()
+        removeTextArea()
         var textArea = $('<textarea disabled   id="display_font" style="margin: 0px; width: 302px; height: 102px;"" />');
         textArea.text((JSON.parse(ext_opts_serialize))[custom_text]);
         element.after(textArea);
@@ -137,7 +140,7 @@
         updateFontWithText($(this))
       }
       if(font_data.length==0){
-        updateFontWithText($(this))
+        removeTextArea()
       }
   });
     $('input[type=text]').on('blur',function(e){
