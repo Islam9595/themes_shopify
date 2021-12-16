@@ -258436,6 +258436,7 @@ else
                             let end_style="</style>";
                             let all_font_faces;
                             for (let font_data in attr.options) {
+                                console.log(font_data.name)
                                 let font_meta_data = JSON.parse(font_data.name);
                                 console.log(font_meta_data)
                                 let font_face = `@font-face { 
