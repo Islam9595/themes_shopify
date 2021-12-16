@@ -259703,7 +259703,7 @@ else
             console.log('old',opts)
             let new_opts=[];
             for (let option_to_edit in opts){
-                option_to_edit=(JSON.parse(option_to_edit.name_initial)).font_family;
+                // option_to_edit=(JSON.parse(option_to_edit.name_initial)).font_family;
                 console.log(option_to_edit)
                 new_opts.push(option_to_edit);
 
