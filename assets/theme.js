@@ -258438,7 +258438,7 @@ else
                                      font-family: '${font_meta_data.font_family}';
                                         font-size: '20px';
                                      font-style : '${font_meta_data.font_style}';
-                                    src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${font_meta_data.file_name}') format('truetype'); }`
+                                    src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${font_meta_data.file_name}') format('truetype'); } \\n`
                                 all_font_faces += font_face
                             })
                              $( "<style>" + all_font_faces + "</style>").appendTo( "head" )
