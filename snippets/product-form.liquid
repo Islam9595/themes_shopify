@@ -122,7 +122,7 @@
       console.log(font_data)
       if(font_data.trim().length){
         let font_data=element.find('option:selected').attr('data-name');
-        let full_font_data = (font_data.name).split(",");
+        let full_font_data = font_data.split(",");
         let font_family=full_font_data[0];
         let font_style=full_font_data[1];
         let form=element.closest('form');
