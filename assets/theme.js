@@ -258015,6 +258015,7 @@ else
             switch (attr.type)
             {
                 case 'list':
+                case 'UploadFont':
 
                     if ($input.attr('data-hide'))
                     {
@@ -258258,6 +258259,7 @@ else
             switch(type)
             {
                 case 'list':
+                case 'UploadFont':
                     val = $input.find('option:selected').val();
                     break;
 
