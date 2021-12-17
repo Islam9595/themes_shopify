@@ -38,6 +38,7 @@ $(document).ready(function () {
 }
 
     $('select[data-attribute-id="166"]').on('change', function (e) {
+        console.log("omarmemam")
     let font_data=$(this).find('option:selected').attr('value');
     if(font_data.length>0){
     updateFontWithText($(this))
