@@ -1,4 +1,4 @@
- $(document).ready(function () {
+(function($){
     function changeFont(font_family,font_style) {
     $('#display_font').css(
 {"font-family": font_family,"font-style": font_style ,'font-size': '30px'}
