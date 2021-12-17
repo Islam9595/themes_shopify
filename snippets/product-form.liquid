@@ -130,7 +130,7 @@
         let custom_text=form.find('input[data-input-type=text]').attr('id')
         let ext_opts_serialize=form.find('input[name="properties[_ext_opts_serialize]"]').attr('value')
         removeTextArea()
-        var textArea = $('<textarea disabled   id="display_font" style="margin: 0px; width: 302px; height: 102px;"" />');
+        var textArea = $('<textarea disabled   id="display_font" style="margin: 0px; width 1000px; height: 102px;"" />');
         textArea.text((JSON.parse(ext_opts_serialize))[custom_text]);
         element.after(textArea);
         element.after("<label id='result'>Result</label>");
