@@ -120,7 +120,6 @@
       let font_data=element.find('option:selected').attr('data-name')
       if(font_data.trim().length){
         let font_data=element.find('option:selected').attr('data-name').replace('- Back in stock soon','');
-        console.log(font_data)
         let  json_font_data=JSON.parse(font_data)
         let form=element.closest('form');
         let custom_text=form.find('input[data-input-type=text]').attr('id')
