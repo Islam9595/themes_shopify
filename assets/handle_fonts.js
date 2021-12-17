@@ -37,7 +37,7 @@
 }
 }
 
-    $('select[name*="166"]').on('change', function (e) {
+    $('select[name*="CustomFont"]').on('change', function (e) {
     console.log("omarmemam")
     let font_data=$(this).find('option:selected').attr('value');
     if(font_data.length>0){
@@ -48,7 +48,7 @@
 }
 });
     $('input[type=text]').on('blur',function(e){
-    let select_font=$('select[id="166"]');
+    let select_font=$('select[name*="CustomFont"]');
     if(select_font.length>0 && $('#display_font').length>0){
     updateFontWithText(select_font)
 }
