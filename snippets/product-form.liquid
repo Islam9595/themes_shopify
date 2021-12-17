@@ -127,7 +127,9 @@
                                      font-family: '${font_family}';
                                      font-style : '${font_style}';
                                         src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${font_data}') format('truetype'); }`
-        $("<style id=''>"+font_face+"</style>").appendTo( "head" )
+        if($('#'+font_data).length==0){
+          $("<style id=''>"+font_face+"</style>").appendTo( "head" )
+        }
         let full_font_data = font_data.split("_");
         let font_family=full_font_data[0];
         let font_style=full_font_data[1];
