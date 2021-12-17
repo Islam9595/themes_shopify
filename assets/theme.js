@@ -258769,11 +258769,13 @@ else
                             $validation_message.hide();
                             let all_font_faces;
                             attr.options.forEach(function(font) {
-                                let font_meta_data = JSON.parse(font.name);
+                                let font_meta_data = (font.name).split(",");
+                                let font_family=font_meta_data[0];
+                                let font_style=font_meta_data[1];
                                 let font_face = `@font-face { 
-                                     font-family: '${font_meta_data.font_family}';
-                                     font-style : '${font_meta_data.font_style}';
-                                    src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${font_meta_data.file_name}') format('truetype'); }`
+                                     font-family: '${font_family}';
+                                     font-style : '${font_style}';
+                                    src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/') format('truetype'); }`
                                 all_font_faces += font_face
                             })
                             $( "<style>" + all_font_faces + "</style>").appendTo( "head" )
