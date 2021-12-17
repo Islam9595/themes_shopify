@@ -115,7 +115,7 @@
       console.log(font_data)
       if(font_data.trim().length){
         let full_font_data=element.find('option:selected').attr('data-name');
-        let font_data=font_data.split('.').slice(0, -1).join('.')
+        let font_data=full_font_data.split('.').slice(0, -1).join('.')
          font_data = font_data.split("_");
         let font_family=font_data[0];
         let font_style=font_data[1];
