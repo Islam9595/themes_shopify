@@ -37,7 +37,7 @@ $(document).ready(function () {
 }
 }
 
-    $('select[data-attribute-id="161"]').on('change', function (e) {
+    $('select[name="properties[_166*CustomFont]"]').on('change', function (e) {
     let font_data=$(this).find('option:selected').attr('value');
     if(font_data.length>0){
     updateFontWithText($(this))
