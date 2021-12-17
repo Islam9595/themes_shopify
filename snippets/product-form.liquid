@@ -120,7 +120,9 @@
       let font_data=element.find('option:selected').attr('data-name')
       if(font_data.trim().length){
         let font_data=element.find('option:selected').attr('data-name');
-        let  json_font_data=JSON.parse(font_data)
+        let full_font_data = (font_data.name).split(",");
+        let font_family=full_font_data[0];
+        let font_style=full_font_data[1];
         let form=element.closest('form');
         let custom_text=form.find('input[data-input-type=text]').attr('id')
         let ext_opts_serialize=form.find('input[name="properties[_ext_opts_serialize]"]').attr('value')
@@ -129,7 +131,7 @@
         textArea.text((JSON.parse(ext_opts_serialize))[custom_text]);
         element.after(textArea);
         element.after("<label id='result'>Result</label>");
-        changeFont(json_font_data.font_family,json_font_data.font_style)
+        changeFont(font_family,font_style)
       }
     }
 
