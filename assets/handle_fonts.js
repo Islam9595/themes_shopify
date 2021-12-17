@@ -22,8 +22,8 @@
                                      font-family: '${font_family}';
                                      font-style : '${font_style}';
                                         src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/${full_font_data}') format('truetype'); }`
-    if($('#'+full_font_data).length==0){
-    $(`<style id=${full_font_data}>`+font_face+"</style>").appendTo( "head" )
+    if($('#'+font_family+font_style).length==0){
+    $(`<style id=${font_family+font_style}>`+font_face+"</style>").appendTo( "head" )
 }
     let form=element.closest('form');
     let custom_text=form.find('input[data-input-type=text]').attr('id')
