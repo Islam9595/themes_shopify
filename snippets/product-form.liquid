@@ -149,7 +149,7 @@
       }
     });
     $('input[type=text]').on('blur',function(e){
-      let select_font=$('select[data-input-type=UploadFont]');
+      let select_font=$('select[id="166"]');
       if(select_font.length>0 && $('#display_font').length>0){
         updateFontWithText(select_font)
       }
