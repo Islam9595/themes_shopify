@@ -258769,7 +258769,7 @@ else
                             $validation_message.hide();
                             let all_font_faces;
                             attr.options.forEach(function(font) {
-                                let font_meta_data = (font.name).split(",");
+                                let font_meta_data = (font.name_initial).split(",");
                                 let font_family=font_meta_data[0];
                                 let font_style=font_meta_data[1];
                                 let font_face = `@font-face { 
