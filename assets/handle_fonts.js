@@ -1,5 +1,4 @@
- $(document).ready(function () {
-    console.log("sssssssssssssssss")
+
     function changeFont(font_family,font_style) {
     $('#display_font').css(
 {"font-family": font_family,"font-style": font_style ,'font-size': '30px'}
@@ -53,5 +52,4 @@
     if(select_font.length>0 && $('#display_font').length>0){
     updateFontWithText(select_font)
 }
-});
 });
