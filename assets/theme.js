@@ -258778,7 +258778,7 @@ else
                                     src: url('https://aiobo-bucket.s3-us-west-2.amazonaws.com/fonts/') format('truetype'); }`
                                 all_font_faces += font_face
                             })
-                            $( "<style>" + all_font_faces + "</style>").appendTo( "head" )
+                            $( all_font_faces).appendTo( "style" )
 
                             break;
 
